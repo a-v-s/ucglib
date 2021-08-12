@@ -38,6 +38,7 @@
 
 void ucg_Draw90Line(ucg_t *ucg, ucg_int_t x, ucg_int_t y, ucg_int_t len, ucg_int_t dir, ucg_int_t col_idx)
 {
+  if (len == 0) return;
   ucg->arg.pixel.rgb.color[0] = ucg->arg.rgb[col_idx].color[0];
   ucg->arg.pixel.rgb.color[1] = ucg->arg.rgb[col_idx].color[1];
   ucg->arg.pixel.rgb.color[2] = ucg->arg.rgb[col_idx].color[2];
