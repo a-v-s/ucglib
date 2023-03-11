@@ -368,8 +368,15 @@ ucg_int_t ucg_ext_ssd1331_18(ucg_t *ucg, ucg_int_t msg, void *data)
   switch(msg)
   {
     case UCG_MSG_DRAW_L90SE:
-      //ucg_handle_l90se(ucg, ucg_dev_ic_ssd1331_18);
-      ucg_handle_ssd1331_l90se(ucg);
+    	// 2023-03-11 - André:
+    	// The code had the ucg_handle_l90se() line commented out
+    	// and replaced with ucg_handle_ssd1331_l90se()
+    	// ucg_handle_ssd1331_l90se() seems to handle drawing a
+    	// gradient box incorrectly. Reverting to the commented
+    	// out the ucg_handle_l90se() function works as expected
+
+      ucg_handle_l90se(ucg, ucg_dev_ic_ssd1331_18);
+      //ucg_handle_ssd1331_l90se(ucg);
       break;
   }
   return 1;
